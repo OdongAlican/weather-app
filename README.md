@@ -5,9 +5,7 @@ This projects implements using fetch method to return data from the weather api 
 
 - HTML,
 - CSS,
-- JavaScript,
-- Bootstrap
-- Webpack
+- JavaScript
 
 ## Live demo Link
 
