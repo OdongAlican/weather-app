@@ -1,18 +1,18 @@
 
 const displayData = (data) => {
   if (data) {
-    console.log(data);
     document.getElementById('city-heading').innerHTML = data.name;
     document.getElementById('feels-like-id').innerHTML = data.main.feels_like;
     document.getElementById('humidity-temp-id').innerHTML = data.main.humidity;
     document.getElementById('pressure-temp-id').innerHTML = data.main.pressure;
     document.getElementById('max-temp-id').innerHTML = data.main.temp_max;
     document.getElementById('min-temp-id').innerHTML = data.main.temp_min;
+    document.getElementById('wind-deg-id').innerHTML = data.wind.deg;
+    document.getElementById('wind-speed-id').innerHTML = data.wind.speed;
 
     const imageSection = document.querySelector('.gif-section');
-    document.getElementById('weather-span').innerHTML = data.weather[0].main
-    document.getElementById('weather-description').innerHTML = data.weather[0].description
-    console.log(data.weather[0].main);
+    document.getElementById('weather-span').innerHTML = data.weather[0].main;
+    document.getElementById('weather-description').innerHTML = data.weather[0].description;
     const image = document.createElement('img');
     image.setAttribute('class', 'image-giff');
 
@@ -30,19 +30,23 @@ const displayData = (data) => {
       imageSection.appendChild(image);
     } else if (data.weather[0].main === 'Mist') {
       imageSection.innerHTML = '';
-      image.setAttribute('src', 'images/mist.gif');
+      image.setAttribute('src', 'images/mist.jpg');
       imageSection.appendChild(image);
-    }else if (data.weather[0].main === 'Thunderstorm') {
+    } else if (data.weather[0].main === 'Thunderstorm') {
       imageSection.innerHTML = '';
       image.setAttribute('src', 'images/Thunderstorm.png');
       imageSection.appendChild(image);
-    }else if (data.weather[0].main === 'Drizzle') {
+    } else if (data.weather[0].main === 'Drizzle') {
       imageSection.innerHTML = '';
       image.setAttribute('src', 'images/rainGif.png');
       imageSection.appendChild(image);
-    }else if (data.weather[0].main === 'Snow') {
+    } else if (data.weather[0].main === 'Snow') {
       imageSection.innerHTML = '';
       image.setAttribute('src', 'images/drizzle.png');
+      imageSection.appendChild(image);
+    } else if (data.weather[0].main === 'Haze') {
+      imageSection.innerHTML = '';
+      image.setAttribute('src', 'images/haze.png');
       imageSection.appendChild(image);
     }
   }

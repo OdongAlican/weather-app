@@ -82,10 +82,6 @@
     background-color: #777;
   }
 
-  .cloud-weather {
-    background-color: #999;
-  }
-
   .wind-section {
     background-color: #555;
   }
@@ -97,12 +93,16 @@
   }
 
   .image-giff {
-    width: 60%;
-    height: 60%;
+    width: 300px;
+    height: 300px;
   }
 
   .gif-section {
     height: 300px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
   }
 
   .main-description {
