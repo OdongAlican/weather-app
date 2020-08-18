@@ -126,7 +126,7 @@ const mainApp = async (cityName) => {
       document.querySelector('.weather-content').classList.remove('hide-weather-content');
       displayData(data);
     } else {
-      showAlert('It seems your city does not exist!!, Please Check the spelling Again',
+      showAlert('Ooopps!! It seems your city does not exist. Please check the spelling',
         'alert-city-name');
     }
 
