@@ -116,3 +116,14 @@ body{
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  #toggle-temperature {
+    background-color: #0269D9;
+    border: none;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+  } 

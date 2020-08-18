@@ -83,19 +83,28 @@ const displayData = (data) => {
 };
 
 const toggleTemperature = (data) => {
-  document.getElementById('toggle-temperature').addEventListener('click', () => {
-    const maximumTemp = data.main.temp_max;
-    const minimumTemp = data.main.temp_min;
+  let maximumTemp = '';
+  let minimumTemp = '';
+  maximumTemp = data.main.temp_max;
+  minimumTemp = data.main.temp_min;
 
-    const value = document.getElementById('max-temp-id').innerHTML;
-    if (value.includes('K')) {
-      const celciusOne = `${(minimumTemp - 273.15).toFixed(2)}°C`;
-      const celciusTwo = `${(maximumTemp - 273.15).toFixed(2)}°C`;
+  let celciusOne = '';
+  let celciusTwo = '';
+  celciusOne = (minimumTemp - 273.15).toFixed(2);
+  celciusTwo = (maximumTemp - 273.15).toFixed(2);
+
+
+  document.getElementById('toggle-temperature').addEventListener('click', () => {
+    let testing = ' ';
+    testing = document.getElementById('max-temp-id').innerHTML;
+    console.log(testing, "first")
+
+    if (testing.includes('K')) {
       document.getElementById('max-temp-id').innerHTML = '';
       document.getElementById('min-temp-id').innerHTML = '';
-      document.getElementById('max-temp-id').innerHTML = celciusTwo;
-      document.getElementById('min-temp-id').innerHTML = celciusOne;
-    } else {
+      document.getElementById('max-temp-id').innerHTML = `${celciusTwo}°C`;
+      document.getElementById('min-temp-id').innerHTML = `${celciusOne}°C`;
+    } else if(testing.includes('C')) {
       document.getElementById('max-temp-id').innerHTML = '';
       document.getElementById('min-temp-id').innerHTML = '';
       document.getElementById('max-temp-id').innerHTML = `${maximumTemp}K`;
@@ -112,12 +121,12 @@ const mainApp = async (cityName) => {
     document.querySelector('.weather-content').classList.add('hide-weather-content');
     const response = await fetch(url, { mode: 'cors' });
     const data = await response.json();
-    setTimeout(() => {
-      document.getElementById('spinner-section').classList.remove('loader');
-      document.querySelector('.weather-content').classList.remove('hide-weather-content');
-      displayData(data);
-      toggleTemperature(data);
-    }, 1000);
+    
+    document.getElementById('spinner-section').classList.remove('loader');
+    document.querySelector('.weather-content').classList.remove('hide-weather-content');
+    
+    displayData(data);
+    toggleTemperature(data);
   } catch (error) {
     return error;
   }
