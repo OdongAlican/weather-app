@@ -98,11 +98,11 @@ const mainApp = async (cityName) => {
     document.querySelector('.weather-content').classList.add('hide-weather-content');
     const response = await fetch(url, { mode: 'cors' });
     const data = await response.json();
-    
+
     document.getElementById('spinner-section').classList.remove('loader');
     document.querySelector('.weather-content').classList.remove('hide-weather-content');
-    
     displayData(data);
+    return data;
   } catch (error) {
     return error;
   }
@@ -116,8 +116,8 @@ document.getElementById('search-button').addEventListener('click', () => {
 });
 
 document.getElementById('toggle-temperature').addEventListener('click', () => {
-  document.querySelector('.maximum-temp-celcious').classList.toggle('hide-section')
-  document.querySelector('.minimum-temp-celcious').classList.toggle('hide-section')
-  document.querySelector('.maximum-temp').classList.toggle('hide-section-two')
-  document.querySelector('.minimum-temp').classList.toggle('hide-section-two')
-})
+  document.querySelector('.maximum-temp-celcious').classList.toggle('hide-section');
+  document.querySelector('.minimum-temp-celcious').classList.toggle('hide-section');
+  document.querySelector('.maximum-temp').classList.toggle('hide-section-two');
+  document.querySelector('.minimum-temp').classList.toggle('hide-section-two');
+});
