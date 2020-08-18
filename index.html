@@ -9,64 +9,66 @@
     <title>Weather App</title>
 </head>
 <body>
-    <div class="upper-section">
-        <input type="text" id="city-name" placeholder="Enter your city name">
-        <button id="search-button">
-            <i class="fas fa-search"></i>
-            Search
-        </button>
-    </div>
+    <div class="general-section">
+        <div class="upper-section">
+            <input type="text" id="city-name" placeholder="Enter your city name">
+            <button id="search-button">
+                <i class="fas fa-search"></i>
+                Search
+            </button>
+        </div>
 
-    <div class="weather-info">
-        <div id="spinner-section" class="main-spinner"></div>
-        <div class="weather-content hide-weather-content">
-            <div class="city-name-section">
-                <h1 id="city-heading"></h1>
-            </div>
-            <div class="inner-content-section">
-                <div class="main-weather-content grid-content">
-                    <div class="temp-feelslike inner-temp">
-                        <p>Feels-Like: <span id="feels-like-id"></span></p>
-                    </div>
-                    <div class="humidity inner-temp">
-                        <p>Humidity: <span id="humidity-temp-id"></span></p>
-                    </div>
-                    <div class="pressure inner-temp">
-                        <p>Pressure: <span id="pressure-temp-id"></span></p>
-                    </div>
-                    <div class="maximum-temp inner-temp">
-                        <p>Maximum Temperature: <span id="max-temp-id"></span></p>
-                    </div>
-                    <div class="maximum-temp-celcious inner-temp hide-section">
-                        <p>Maximum Temperature: <span id="max-temp-id-celcious"></span></p>
-                    </div>
-                    <div class="minimum-temp inner-temp">
-                        <p>Minimum Temperature: <span id="min-temp-id"></span></p>
-                    </div>
-                    <div class="minimum-temp-celcious inner-temp hide-section">
-                        <p>Minimum Temperature: <span id="min-temp-id-celcious"></span></p>
-                    </div>
-                    <div class="toggle-button">
-                        <button id="toggle-temperature">Toggle Temperature</button>
-                    </div>
+        <div class="weather-info">
+            <div id="spinner-section" class="main-spinner"></div>
+            <div class="weather-content hide-weather-content">
+                <div class="city-name-section">
+                    <h1 id="city-heading"></h1>
                 </div>
-                <div class="cloud-weather grid-content">
-                    <div class="main-description">
-                        <h2>
-                            Weather:
-                            <span id="weather-span"></span>
-                        </h2>
-                        <h4 id="weather-description"></h4>
+                <div class="inner-content-section">
+                    <div class="main-weather-content grid-content">
+                        <div class="temp-feelslike inner-temp">
+                            <p>Feels-Like: <span id="feels-like-id"></span></p>
+                        </div>
+                        <div class="humidity inner-temp">
+                            <p>Humidity: <span id="humidity-temp-id"></span></p>
+                        </div>
+                        <div class="pressure inner-temp">
+                            <p>Pressure: <span id="pressure-temp-id"></span></p>
+                        </div>
+                        <div class="maximum-temp inner-temp">
+                            <p>Maximum Temperature: <span id="max-temp-id"></span></p>
+                        </div>
+                        <div class="maximum-temp-celcious inner-temp hide-section">
+                            <p>Maximum Temperature: <span id="max-temp-id-celcious"></span></p>
+                        </div>
+                        <div class="minimum-temp inner-temp">
+                            <p>Minimum Temperature: <span id="min-temp-id"></span></p>
+                        </div>
+                        <div class="minimum-temp-celcious inner-temp hide-section">
+                            <p>Minimum Temperature: <span id="min-temp-id-celcious"></span></p>
+                        </div>
+                        <div class="toggle-button">
+                            <button id="toggle-temperature">Toggle Temperature</button>
+                        </div>
                     </div>
-                    <div class="gif-section">
+                    <div class="cloud-weather grid-content">
+                        <div class="main-description">
+                            <h2>
+                                Weather:
+                                <span id="weather-span"></span>
+                            </h2>
+                            <h4 id="weather-description"></h4>
+                        </div>
+                        <div class="gif-section">
+                        </div>
                     </div>
-                </div>
-                <div class="wind-section grid-content">
-                    <div class="wind-speed inner-temp">
-                        <p>Wind-Speed: <span id="wind-speed-id"></span></p>
-                    </div>
-                    <div class="wind-deg inner-temp">
-                        <p>Wind-Deg: <span id="wind-deg-id"></span></p>
+                    <div class="wind-section grid-content">
+                        <div class="wind-speed inner-temp">
+                            <p>Wind-Speed: <span id="wind-speed-id"></span></p>
+                        </div>
+                        <div class="wind-deg inner-temp">
+                            <p>Wind-Deg: <span id="wind-deg-id"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>

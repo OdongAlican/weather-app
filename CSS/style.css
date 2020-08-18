@@ -132,3 +132,15 @@ body{
   .hide-section {
     display: none;
   }
+
+  .alert-city-name {
+    width: 30%;
+    color: #fff;
+    background-color: #FEC134;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    border: 1px solid #aaa;
+    text-align: center;
+    font-size: 16px;
+  }

@@ -90,6 +90,28 @@ const displayData = (data) => {
   }
 };
 
+const clearAlert = () => {
+  const currentAlert = document.querySelector('.alert-city-name');
+  if (currentAlert) {
+    currentAlert.remove();
+  }
+};
+
+
+const showAlert = (massage, className) => {
+  clearAlert();
+  const div = document.createElement('div');
+  div.className = className;
+  div.appendChild(document.createTextNode(massage));
+  const mainSection = document.querySelector('.general-section');
+  const board = document.querySelector('.upper-section');
+  mainSection.insertBefore(div, board);
+  setTimeout(() => {
+    clearAlert();
+    document.getElementById('spinner-section').classList.remove('loader');
+  }, 3000);
+};
+
 const mainApp = async (cityName) => {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=bae266a2bf0e92ca7ec62610275967dc`;
 
@@ -99,9 +121,15 @@ const mainApp = async (cityName) => {
     const response = await fetch(url, { mode: 'cors' });
     const data = await response.json();
 
-    document.getElementById('spinner-section').classList.remove('loader');
-    document.querySelector('.weather-content').classList.remove('hide-weather-content');
-    displayData(data);
+    if (data.main) {
+      document.getElementById('spinner-section').classList.remove('loader');
+      document.querySelector('.weather-content').classList.remove('hide-weather-content');
+      displayData(data);
+    } else {
+      showAlert('It seems your city does not exist!!, Please Check the spelling Again',
+        'alert-city-name');
+    }
+
     return data;
   } catch (error) {
     return error;
