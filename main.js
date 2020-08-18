@@ -1,14 +1,44 @@
 
 const displayData = (data) => {
   if (data) {
-    document.getElementById('city-heading').innerHTML = data.name;
-    document.getElementById('feels-like-id').innerHTML = data.main.feels_like;
-    document.getElementById('humidity-temp-id').innerHTML = data.main.humidity;
-    document.getElementById('pressure-temp-id').innerHTML = data.main.pressure;
-    document.getElementById('max-temp-id').innerHTML = data.main.temp_max;
-    document.getElementById('min-temp-id').innerHTML = data.main.temp_min;
-    document.getElementById('wind-deg-id').innerHTML = data.wind.deg;
-    document.getElementById('wind-speed-id').innerHTML = data.wind.speed;
+    const content = [
+      {
+        id: 'city-heading',
+        value: data.name,
+      },
+      {
+        id: 'feels-like-id',
+        value: data.main.feels_like,
+      },
+      {
+        id: 'humidity-temp-id',
+        value: data.main.humidity,
+      },
+      {
+        id: 'pressure-temp-id',
+        value: data.main.pressure,
+      },
+      {
+        id: 'max-temp-id',
+        value: `${data.main.temp_max}K`,
+      },
+      {
+        id: 'min-temp-id',
+        value: `${data.main.temp_min}K`,
+      },
+      {
+        id: 'wind-deg-id',
+        value: data.wind.deg,
+      },
+      {
+        id: 'wind-speed-id',
+        value: data.wind.speed,
+      },
+    ];
+
+    for (let i = 0; i < content.length; i += 1) {
+      document.getElementById(content[i].id).innerHTML = content[i].value;
+    }
 
     const imageSection = document.querySelector('.gif-section');
     document.getElementById('weather-span').innerHTML = data.weather[0].main;
@@ -52,6 +82,28 @@ const displayData = (data) => {
   }
 };
 
+const toggleTemperature = (data) => {
+  document.getElementById('toggle-temperature').addEventListener('click', () => {
+    const maximumTemp = data.main.temp_max;
+    const minimumTemp = data.main.temp_min;
+
+    const value = document.getElementById('max-temp-id').innerHTML;
+    if (value.includes('K')) {
+      const celciusOne = `${(minimumTemp - 273.15).toFixed(2)}°C`;
+      const celciusTwo = `${(maximumTemp - 273.15).toFixed(2)}°C`;
+      document.getElementById('max-temp-id').innerHTML = '';
+      document.getElementById('min-temp-id').innerHTML = '';
+      document.getElementById('max-temp-id').innerHTML = celciusTwo;
+      document.getElementById('min-temp-id').innerHTML = celciusOne;
+    } else {
+      document.getElementById('max-temp-id').innerHTML = '';
+      document.getElementById('min-temp-id').innerHTML = '';
+      document.getElementById('max-temp-id').innerHTML = `${maximumTemp}K`;
+      document.getElementById('min-temp-id').innerHTML = `${minimumTemp}K`;
+    }
+  });
+};
+
 const mainApp = async (cityName) => {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=bae266a2bf0e92ca7ec62610275967dc`;
 
@@ -64,6 +116,7 @@ const mainApp = async (cityName) => {
       document.getElementById('spinner-section').classList.remove('loader');
       document.querySelector('.weather-content').classList.remove('hide-weather-content');
       displayData(data);
+      toggleTemperature(data);
     }, 1000);
   } catch (error) {
     return error;
@@ -72,5 +125,7 @@ const mainApp = async (cityName) => {
 
 document.getElementById('search-button').addEventListener('click', () => {
   const city = document.getElementById('city-name').value;
-  mainApp(city);
+  if (city) {
+    mainApp(city);
+  }
 });
