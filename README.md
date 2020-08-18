@@ -11,11 +11,9 @@ This projects implements using fetch method to return data from the weather api 
 
 ## Live demo Link
 
-[live link](https://rawcdn.githack.com/OdongAlican/JS-To-Do-List/3a86b65dc66bbd7be54e098d4dd2f6db1ce57300/dist/index.html)
+[live link](https://rawcdn.githack.com/OdongAlican/weather-app/d8fdca7d7918adfdde299bde5dd1402a12717059/index.html)
 
-![Landing page](images/1.png)
-![To-Do page](images/2.png)
-![Add To-Do Form](images/3.png)
+![Landing page](images/main.png)
 
 ### Prerequisites
 
@@ -26,23 +24,15 @@ This projects implements using fetch method to return data from the weather api 
 - Fork the repo to your remote repository.
 - Clone or download the repository to your local machine.
 
-### Install
-
-- Ensure that you have node.js and npm installed in your machine.
-- Run `npm install`to install the project packages
-
 ### Usage section.
 
-- Run `npm run dev`to bundle the packages for development. Dev is created for development, meaning that it supports hot module replacement, dev server, and a lot of things that assist your dev work
-- Run `npm run build` when you want to deploy the project for production.
-## Authors
+- No installation is required for this application.
+- Open the `index.html`file in your browser.
+- Type in a correct city or town name in the input field.
+- If the input value is correct, the weather information about that city or town will be displayed.
+- Feel free to change the temperature from kelvin to celcius by clicking the `Temperature toggle` Button
 
-👤 **Rahma Halane**
-
-- [Portfolio](https://raw.githack.com/imahnama/my-portfolio/develop/index.html)
-- [Twitter](https://twitter.com/halane_rahma)
-- [Linkedin](https://www.linkedin.com/in/rahmahalane/)
-- [Email](mailto:Halane.rahma@gmail.com )
+## Author
 
 👤 **Odong Sunday**
 
@@ -57,7 +47,7 @@ This projects implements using fetch method to return data from the weather api 
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/OdongAlican/JS-To-Do-List/issues).
+Feel free to check the [issues page](https://github.com/OdongAlican/weather-app/issues).
 
 ## Show your support
 
