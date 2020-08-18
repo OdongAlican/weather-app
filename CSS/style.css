@@ -63,7 +63,52 @@
   }
 
   .weather-content {
-    height: 200px;
     background-color: #666;
     padding: 30px;
+  }
+
+  .city-name-section {
+    background-color: #888;
+    padding: 3px;
+  }
+
+  .inner-content-section {
+    padding: 2px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .main-weather-content {
+    background-color: #777;
+  }
+
+  .cloud-weather {
+    background-color: #999;
+  }
+
+  .wind-section {
+    background-color: #555;
+  }
+
+  .inner-temp {
+    background-color: #279;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .image-giff {
+    width: 60%;
+    height: 60%;
+  }
+
+  .gif-section {
+    height: 300px;
+  }
+
+  .main-description {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
   }
