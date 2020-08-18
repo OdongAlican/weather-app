@@ -23,8 +23,16 @@ const displayData = (data) => {
         value: `${data.main.temp_max}K`,
       },
       {
+        id: 'max-temp-id-celcious',
+        value: `${((data.main.temp_max) - 273.15).toFixed(2)}°C`,
+      },
+      {
         id: 'min-temp-id',
         value: `${data.main.temp_min}K`,
+      },
+      {
+        id: 'min-temp-id-celcious',
+        value: `${((data.main.temp_max) - 273.15).toFixed(2)}°C`,
       },
       {
         id: 'wind-deg-id',
@@ -82,37 +90,6 @@ const displayData = (data) => {
   }
 };
 
-const toggleTemperature = (data) => {
-  let maximumTemp = '';
-  let minimumTemp = '';
-  maximumTemp = data.main.temp_max;
-  minimumTemp = data.main.temp_min;
-
-  let celciusOne = '';
-  let celciusTwo = '';
-  celciusOne = (minimumTemp - 273.15).toFixed(2);
-  celciusTwo = (maximumTemp - 273.15).toFixed(2);
-
-
-  document.getElementById('toggle-temperature').addEventListener('click', () => {
-    let testing = ' ';
-    testing = document.getElementById('max-temp-id').innerHTML;
-    console.log(testing, "first")
-
-    if (testing.includes('K')) {
-      document.getElementById('max-temp-id').innerHTML = '';
-      document.getElementById('min-temp-id').innerHTML = '';
-      document.getElementById('max-temp-id').innerHTML = `${celciusTwo}°C`;
-      document.getElementById('min-temp-id').innerHTML = `${celciusOne}°C`;
-    } else if(testing.includes('C')) {
-      document.getElementById('max-temp-id').innerHTML = '';
-      document.getElementById('min-temp-id').innerHTML = '';
-      document.getElementById('max-temp-id').innerHTML = `${maximumTemp}K`;
-      document.getElementById('min-temp-id').innerHTML = `${minimumTemp}K`;
-    }
-  });
-};
-
 const mainApp = async (cityName) => {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=bae266a2bf0e92ca7ec62610275967dc`;
 
@@ -126,7 +103,6 @@ const mainApp = async (cityName) => {
     document.querySelector('.weather-content').classList.remove('hide-weather-content');
     
     displayData(data);
-    toggleTemperature(data);
   } catch (error) {
     return error;
   }
@@ -138,3 +114,10 @@ document.getElementById('search-button').addEventListener('click', () => {
     mainApp(city);
   }
 });
+
+document.getElementById('toggle-temperature').addEventListener('click', () => {
+  document.querySelector('.maximum-temp-celcious').classList.toggle('hide-section')
+  document.querySelector('.minimum-temp-celcious').classList.toggle('hide-section')
+  document.querySelector('.maximum-temp').classList.toggle('hide-section-two')
+  document.querySelector('.minimum-temp').classList.toggle('hide-section-two')
+})
