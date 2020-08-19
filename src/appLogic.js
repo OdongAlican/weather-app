@@ -24,19 +24,19 @@ const appLogic = () => {
         },
         {
           id: 'max-temp-id',
-          value: `${data.main.temp_max}K`,
+          value: `${data.main.temp_max}°F`,
         },
         {
           id: 'max-temp-id-celcious',
-          value: `${((data.main.temp_max) - 273.15).toFixed(2)}°C`,
+          value: `${(((data.main.temp_max) - 32) * (5 / 9)).toFixed(2)}°C`,
         },
         {
           id: 'min-temp-id',
-          value: `${data.main.temp_min}K`,
+          value: `${data.main.temp_min}°F`,
         },
         {
           id: 'min-temp-id-celcious',
-          value: `${((data.main.temp_max) - 273.15).toFixed(2)}°C`,
+          value: `${(((data.main.temp_min) - 32) * (5 / 9)).toFixed(2)}°C`,
         },
         {
           id: 'wind-deg-id',
@@ -85,7 +85,7 @@ const appLogic = () => {
   };
 
   const mainApp = async (cityName) => {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=bae266a2bf0e92ca7ec62610275967dc`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=bae266a2bf0e92ca7ec62610275967dc&units=imperial`;
 
     try {
       modifyUInstance.displaySpinner();
