@@ -6,12 +6,13 @@ This projects implements using fetch method to return data from the weather api 
 - HTML,
 - CSS,
 - JavaScript
+- Webpack
 
 ## Live demo Link
 
-[live link](https://rawcdn.githack.com/OdongAlican/weather-app/d8fdca7d7918adfdde299bde5dd1402a12717059/index.html)
+[live link](https://rawcdn.githack.com/OdongAlican/weather-app/b1d0e5eb14c1bc473871afa73f803e2375bd3f62/dist/index.html)
 
-![Landing page](images/main.png)
+![Landing page](dist/images/main.png)
 
 ### Prerequisites
 
@@ -23,8 +24,9 @@ This projects implements using fetch method to return data from the weather api 
 - Clone or download the repository to your local machine.
 
 ### Usage section.
-
-- No installation is required for this application.
+- Run `npm install`to install the project pakages
+- Run `npm run dev`to bundle the packages for development. Dev is created for development, meaning that it supports hot module    replacement, dev server, and a lot of things that assist your dev work
+- Run `npm run build` when you want to deploy the project for production.
 - Open the `index.html`file in your browser.
 - Type in a correct city or town name in the input field.
 - If the input value is correct, the weather information about that city or town will be displayed.
