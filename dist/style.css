@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.upper-section {
+  background-color: lightgray;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  border-bottom: 1px solid #fff;
+}
+
+.upper-section input {
+  border: none;
+  width: 300px;
+  height: 40px;
+  outline: none;
+  padding: 0 15px;
+}
+
+.upper-section button {
+  border: none;
+  padding: 0 20px;
+  background-color: #0269d9;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.weather-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-spinner {
+  margin: auto;
+}
+
+.hide-weather-content {
+  display: none;
+}
+
+.weather-content {
+  background-color: #fff;
+  padding: 1px;
+}
+
+.city-name-section {
+  background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+  color: #555;
+}
+
+.inner-content-section {
+  padding: 2px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.main-weather-content {
+  background-color: lightgray;
+}
+
+.wind-section {
+  background-color: lightgray;
+}
+
+.inner-temp {
+  background-color: #777;
+  padding: 10px;
+  margin-top: 10px;
+  color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-giff {
+  width: 300px;
+  height: 300px;
+}
+
+.gif-section {
+  height: 300px;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.main-description {
+  text-align: center;
+  padding: 20px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #777;
+}
+
+#toggle-temperature {
+  background-color: #0269d9;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #fff;
+}
+
+.toggle-button {
+  background-color: #555;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.hide-section-two,
+.hide-section {
+  display: none;
+}
+
+.alert-city-name {
+  width: 30%;
+  color: #fff;
+  background-color: #fec134;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  border: 1px solid #aaa;
+  text-align: center;
+  font-size: 16px;
+}
